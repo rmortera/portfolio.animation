@@ -1,10 +1,10 @@
 ---
 const personalImageAlt = "Roberto Mortera"
 import SocialPill from "./SocialPill.astro";
-import GitHubIcon from "./icons/GitHubIcon.astro";
 import LinkedInIcon from "./icons/LinkedInIcon.astro";
 import MailIcon from "./icons/MailIcon.astro";
 import Badge from "./Badge.astro"
+import VimeoIcon from "./icons/VimeoIcon.astro";
 ---
 
 <div class="max-w-xl">
@@ -23,8 +23,9 @@ import Badge from "./Badge.astro"
   Hi, I'm Roberto Mortera 
   </h1>
 
-  <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-    <span class="dark:text-[#ffdb58] text-[#030303d9]">Frontend Developer.</span> <span class="dark:text-[#fafafa] text-[#030303d9]">Focused on creating and improving the development of projects and applications, especially in the frontend area using technologies such as JavaScript, React, Tailwind CSS, HTML/CSS, TypeScript.</span> 
+  <h2 class="text-xl lg:text-3xl text-wrap max-w-[700px]">
+    <span class="dark:text-[#ffdb58] text-[#030303d9]">3D Animator.</span> <span class="dark:text-[#fafafa] text-[#030303d9]">Passionate about bringing characters to life, focused
+      on the principles of animation, lip-sync and body mechanics.</span> 
   </h2>
 
   <nav class="flex gap-4 mt-8 flex-wrap">
@@ -33,9 +34,9 @@ import Badge from "./Badge.astro"
         LinkedIn
       </SocialPill>
 
-      <SocialPill href="https://github.com/rmortera">
-        <GitHubIcon class="size-4 md:size-6"/>
-        GitHub
+      <SocialPill href="https://vimeo.com/883058929">
+        <VimeoIcon class="size-4 md:size-6"/>
+        Demo Reel
       </SocialPill>	
 
       <SocialPill href="mailto:robmrtra@gmail.com">

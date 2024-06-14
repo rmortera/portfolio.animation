@@ -3,10 +3,11 @@ import ReactIcon from './icons/ReactIcon.astro'
 import JavaScriptIcon from './icons/JavaScriptIcon.astro'
 import NextJSIcon from './icons/NextJSIcon.astro'
 import TailwindIcon from './icons/TailwindIcon.astro'
-import GitHubIcon from "./icons/GitHubIcon.astro"
+import VimeoIcon from "./icons/VimeoIcon.astro"
 import CSSIcon from "./icons/CSSIcon.astro"
 import TypescriptIcon from "./icons/TypescriptIcon.astro"
 import HTMLIcon from "./icons/HTMLIcon.astro"
+import MayaIcon from "./icons/MayaIcon.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
@@ -41,62 +42,35 @@ const TAGS = {
     name: "HTML",
     icon: HTMLIcon
   },
+  MAYA: {
+    name: "Maya",
+    icon: MayaIcon
+  },
 }
 
 
 
 const PROJECTS = [
   {
-    title: "E-commerce",
-    description: "Built with React and Tailwind CSS. Application that simulates an E-commerce in which the user is able to view the available products, filter them by categories, as well as be able to add or delete them from the shopping cart, and then create the order.",
-    link: "https://my-ecommerce-react-app.netlify.app/",
-    github: "https://github.com/rmortera/ecommerce-react",
-    image: "/projects/ecommerce.webp",
-    tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.TAILWIND]
-  },
-  {
-    title: "Fast React Pizza App",
-    description: "Made with React and styled with Tailwind CSS, it is a responsive app that allows the user to enter their name, see a complete menu of pizzas using an API, which displays an image, the name of the pizza, its ingredients and price. The user can choose one or more pizzas, as well as reduce the quantity or eliminate it, add it to the shopping cart and place the order, and then indicate the address and information to show the personalized order with the user's data, the total to pay and the estimated time it will arrive at the entered address.",
-    link: "https://the-fast-pizza-app.netlify.app/",
-    github: "https://github.com/rmortera/fast-react-pizza",
-    image: "/projects/fast_react_pizza.webp",
-    tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.TAILWIND]
-  },
-  {
-    title: "Music Player",
-    description: "Made with JavaScript, HTML and CSS, digital music player.",
-    link: "https://my-musicplayer-app.netlify.app/",
-    github: "https://github.com/rmortera/music-player-app.git",
-    image: "/projects/music-player.webp",
-    tags: [TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS]
-  },
-  {
-    title: "To Do's List",
-    description: "Made with React and TypeScript, app that allows you to enter different tasks, together with a brief summary, you can also mark them as done and delete them.",
-    link: "https://my-to-dos-list-app.netlify.app/",
-    github: "https://github.com/rmortera/to-do-list.git",
-    image: "/projects/to-dos.webp",
-    tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.TYPESCRIPT]
-  },
-  {
-    title: "Shopping List",
-    description: "Made with React, JavaScript, HTML and CSS. Responsive App that allows the user enter any item, add it to the list, check it, delete it and sort them by alphabetical order, input order or if it is checked already, as well as clear the complete list.",
-    link: "https://my-shoppinglist-2024.netlify.app/",
-    github: "https://github.com/rmortera/my-shopping-list",
-    image: "/projects/shopping_list.webp",
-    tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.CSS]
-  },
-  
+    title: "3D Animation Reel",
+    description: "Responsible only for the animation. Most recent projects: The Wingfeather Saga Season Two, Friend Z Space, Me & Winnie The Pooh.",
+    vimeo: "https://vimeo.com/883058929",
+    video: "/AnimationReel.mp4",
+    link: "https://drive.google.com/file/d/10cp0iNlNT4vpnVTh0D-E2CpMZe56Gppq/view?usp=sharing",
+    tags: [TAGS.MAYA]
+  },  
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ video, title, description, tags, vimeo, link }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border dark:lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Project Images" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:shadow-2xl lg:border dark:lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <video class="w-full h-56 sm:h-full" controls>
+        <source src={video} type="video/mp4">
+      </video>
     </div>
   </div>
 
@@ -121,18 +95,19 @@ const PROJECTS = [
 
       <div class="mt-2 dark:text-[#fafafa] text-[#030303d9] text-sm lg:text-lg text-pretty">{description}</div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHubIcon class="size-6" />
-              Code             
+          {vimeo && (
+            <LinkButton href={vimeo}>
+              <VimeoIcon class="size-6" />
+              Demo Reel             
             </LinkButton>
           )}
           {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
-              Preview
+              Resume / CV
             </LinkButton>
           )}
+         
         </footer>
     </div>
   </div>
@@ -140,3 +115,4 @@ const PROJECTS = [
     ))
   }
 </div>
+
