@@ -1,4 +1,9 @@
 ---
+import SocialPill from "./SocialPill.astro"
+import LinkedInIcon from "./icons/LinkedInIcon.astro"
+import MailIcon from "./icons/MailIcon.astro"
+import VimeoIcon from "./icons/VimeoIcon.astro"
+
  const personalImageAlt = "Roberto Mortera"
 ---
 
@@ -20,3 +25,20 @@ and well organized, open and willing to learn and to help.
   <img width="200" height="200" src="/profile_pic.jpg" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
 
 </article>
+
+<nav class="flex gap-4 mt-8 flex-wrap">
+  <SocialPill href="mailto:robmrtra@gmail.com">
+    <MailIcon class="size-4 md:size-6"/>
+    Contact me
+  </SocialPill>	
+
+  <SocialPill href="https://vimeo.com/883058929">
+    <VimeoIcon class="size-4 md:size-6"/>
+    Demo Reel
+  </SocialPill>	
+
+    <SocialPill href="https://www.linkedin.com/in/robmortera/">
+      <LinkedInIcon class="size-4 md:size-6"/>
+      LinkedIn
+    </SocialPill>
+</nav>
